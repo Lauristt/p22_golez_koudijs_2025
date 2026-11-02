@@ -1,0 +1,19 @@
+[project]
+name = "P22: Equity Duration and Predictability"
+description = "Initial setup for replication and extension of Golez and Koudijs (2025); empirical results pending."
+maintainer = "Lauris Li"
+contributors = ["Lauris Li", "Yiyao Wang", "Gary Miao", "Luke Zhu"]
+repo_url = "https://github.com/Lauristt/p22_golez_koudijs_2025"
+site_url = "https://lauristt.github.io/p22_golez_koudijs_2025/"
+os_compatibility = ["Windows", "Linux", "macOS"]
+requires_chartbook = ">=0.4.0"
+enable_data_download = false
+
+[scripts]
+build = "doit"
+test = "pytest"
+
+# Register empirical outputs and their source metadata when implemented.
+[dataframes]
+[charts]
+[notebooks]

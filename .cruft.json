@@ -1,0 +1,43 @@
+{
+  "template": "https://github.com/backofficedev/cookiecutter_chartbook",
+  "commit": "9eebbda0b314cc9d95065cfd70904898a5f5731c",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "Equity Duration and Predictability",
+      "project_slug": "p22_golez_koudijs_2025",
+      "project_description": "Replication and extension of Golez and Koudijs (2025) for FINM 32800",
+      "author_name": "Lauris Li",
+      "author_email": "156524798+Lauristt@users.noreply.github.com",
+      "python_version": "3.12",
+      "environment_manager": "uv",
+      "include_latex_reports": true,
+      "include_jupyter_notebooks": true,
+      "include_r_scripts": false,
+      "include_stata_scripts": false,
+      "include_chartbook": true,
+      "include_github_actions": true,
+      "include_fred": false,
+      "include_fed_yield_curve": false,
+      "include_ofr_api": false,
+      "include_bloomberg": false,
+      "include_crsp_stock": false,
+      "include_crsp_compustat": false,
+      "_copy_without_render": [
+        "*.bst",
+        "*.sty",
+        "*.eps",
+        "*.ipe",
+        "*.png",
+        "*.pdf",
+        "*.tex",
+        "*.bib",
+        ".github/workflows/*.yml",
+        ".claude/skills/*/*.md"
+      ],
+      "_template": "https://github.com/backofficedev/cookiecutter_chartbook",
+      "_commit": "9eebbda0b314cc9d95065cfd70904898a5f5731c"
+    }
+  },
+  "directory": null
+}
