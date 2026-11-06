@@ -1,0 +1,12 @@
+{
+  "baseline_end_year": 2022,
+  "baseline_strip_months": 324,
+  "rolling_years": 10,
+  "hac_annual_lags": 1,
+  "hac_monthly_lags": 12,
+  "table4_smoothing_source_constants": [
+    0.21,
+    0.32,
+    0.31
+  ]
+}

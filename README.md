@@ -2,7 +2,7 @@
 
 Replication and extension of Benjamin Golez and Peter Koudijs (2025), *Equity duration and predictability*, Journal of Financial Economics **172**, 104114. [Paper DOI](https://doi.org/10.1016/j.jfineco.2025.104114).
 
-**Status: initial setup.** The documentation pipeline runs, but the empirical replication, updated sample, validation exhibits, final LaTeX report and research product are not implemented yet.
+**Status: local Python baseline implemented.** Tables 1, 2, 4, 5, 6, 7 and Figures 1, 3 are generated from the authors’ Mendeley package. All 263 independently recomputed numeric table cells match published rounding; three Table 4 smoothing values remain explicitly labeled source constants. Updated data, raw-stock reconstruction, the final report and product extension remain future work. See [implementation and audit](REPLICATION.md).
 
 ## Team
 
@@ -10,7 +10,7 @@ Lauris Li (Yuting Li; Lauristt), Yiyao Wang (PriscillaWyy), Gary Miao (garymmmjw
 
 ## Clean-clone setup
 
-Requires Git and [uv](https://docs.astral.sh/uv/). The project uses Python 3.12 and a committed lockfile. No WRDS credentials or LaTeX installation are needed for the initial documentation build.
+Requires Git and [uv](https://docs.astral.sh/uv/). The project uses Python 3.12 and a committed lockfile. No WRDS credentials or MATLAB/LaTeX installation are needed for the supplied-data baseline.
 
 ```bash
 git clone git@github.com:Lauristt/p22_golez_koudijs_2025.git
@@ -19,7 +19,9 @@ uv sync --frozen
 uv run doit
 ```
 
-The default task runs the scaffold tests and builds the ChartBook site in `docs/`. It does **not** execute the template's example analyses or claim replication results. The template example scripts/report files are retained only as development references.
+The default task downloads missing pinned inputs, cleans them, estimates the assigned exhibits, validates them and writes `_output/replication/index.html`. A second run skips unchanged work. `uv run doit accept` checks published-value agreement; `uv run doit checks` tests numerical methods and dependency rebuilding. For continuous local rebuilding, run `uv run python src/watch_pipeline.py`. The separate ChartBook site builds with `uv run doit site`. Template example analyses are not executed.
+
+This implementation is currently on the local `local/python-replication` branch; the cloud repository contains the earlier setup and cleanup only until explicitly published.
 
 For pip users, `requirements.txt` is exported from `uv.lock`; use Python 3.12 and a virtual environment, install with `pip install -r requirements.txt`, then run `doit`. To update dependencies, update `pyproject.toml`, run `uv lock`, and regenerate requirements with `uv export --no-hashes --no-dev --format requirements-txt --output-file requirements.txt`.
 
@@ -40,7 +42,7 @@ Tables 8 and 9 are excluded.
 
 ## Data and configuration
 
-[Authors' package, version 1](https://data.mendeley.com/datasets/fp6fryn7h3/1) is the first benchmark. Additional sources: Benjamin Golez's dividend-strip series; Golez-Koudijs (2018) historical series; CRSP and Compustat via WRDS; Davis-Fama-French book equity from Kenneth French. The course permits CRSP S&P 500 returns in place of Datastream. Actual package ingestion and WRDS pulls are pending; record source versions and licensing before redistribution.
+[Authors' package, version 1](https://data.mendeley.com/datasets/fp6fryn7h3/1) is the first benchmark. Additional sources: Benjamin Golez's dividend-strip series; Golez-Koudijs (2018) historical series; CRSP and Compustat via WRDS; Davis-Fama-French book equity from Kenneth French. The course permits CRSP S&P 500 returns in place of Datastream. Package ingestion is implemented and pinned by file hashes; WRDS pulls and recent-data updates are pending. Original inputs and outputs stay ignored locally because the package includes third-party data restrictions.
 
 `src/settings.py` and optional ignored `.env` configure `DATA_DIR`, `OUTPUT_DIR`, `START_DATE`, `END_DATE`, and `WRDS_USERNAME`. See `.env.example`. The baseline ends in 2022; later update runs must report actual source coverage. Never commit `.env`, secrets, raw restricted data or the source paper.
 
@@ -48,12 +50,9 @@ Tables 8 and 9 are excluded.
 
 Retain `.cruft.json`: this project was generated using `cruft create https://github.com/backofficedev/cookiecutter_chartbook`. Use `uv run cruft check` before reviewing future template updates.
 
-1. Freeze exhibit specifications and tolerances before estimating results.
-2. Add pull scripts, immutable raw inputs, and source manifests.
-3. Add separate cleaning and analysis modules; parameterize time coverage.
-4. Test source reconciliation, identities, filters and coverage; produce an original validation table and figure.
-5. Replicate the eight exhibits, then update each to the latest available data.
-6. Register real outputs and sources in `chartbook.toml`; add a cleaned-data tour notebook and generated LaTeX report.
+The implemented dependency graph is original files → cleaned Parquet → estimates → figures → validation/report → hash history. `config/replication.json` contains baseline settings; `config/published_benchmarks.json` supplies validation references only, never estimator inputs.
+
+Next: reconstruct restricted raw-security portfolios, update the sample, recover the missing smoothing-estimation code, register approved outputs for publication, and develop the agreed extension. See [REPLICATION.md](REPLICATION.md) for the MATLAB-to-Python map and numerical conventions.
 
 Future work should go through teammate-reviewed pull requests. Every member must author at least one merged PR and review a teammate's PR under the course rubric.
 

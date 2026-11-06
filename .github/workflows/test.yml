@@ -1,4 +1,4 @@
-name: Setup checks
+name: Python and documentation checks
 on: [push, pull_request]
 permissions:
   contents: read
@@ -11,5 +11,5 @@ jobs:
         with:
           enable-cache: true
       - run: uv sync --frozen
-      - run: uv run doit
+      - run: uv run doit checks site
       - run: uv run chartbook check --project-dir . --policy chartbook.toml --skip-outputs

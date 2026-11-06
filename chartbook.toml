@@ -1,6 +1,6 @@
 [project]
 name = "P22: Equity Duration and Predictability"
-description = "Initial setup for replication and extension of Golez and Koudijs (2025); empirical results pending."
+description = "Python replication of assigned baseline exhibits from Golez and Koudijs (2025); updates and extension pending."
 maintainer = "Lauris Li"
 contributors = ["Lauris Li", "Yiyao Wang", "Gary Miao", "Luke Zhu"]
 repo_url = "https://github.com/Lauristt/p22_golez_koudijs_2025"

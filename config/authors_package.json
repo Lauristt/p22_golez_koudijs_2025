@@ -1,0 +1,29 @@
+{
+  "dataset": "fp6fryn7h3",
+  "version": 1,
+  "doi": "10.17632/fp6fryn7h3.1",
+  "url": "https://data.mendeley.com/datasets/fp6fryn7h3/1",
+  "download_url": "https://data.mendeley.com/public-api/zip/fp6fryn7h3/download/1",
+  "license": "CC BY 4.0, subject to third-party restrictions noted in README.pdf",
+  "files": {
+    "Table_1_2_Dividend_Strip.m": "7d59bff088abbdd703935da0c7d24bcec739394da3f3464ca9dde83a490daf21",
+    "Data_Netherlands_UK_1602_1812.xls": "f1c05e907d400755cb5540a7decb0fb72e6028716d8a02e07fb8173dbfe874b2",
+    "Table_5_Time_Series.m": "f93fc63e59c4fb3fadac8f8f968129c40ca3a009a8ba6c19dcddb63b68edd844",
+    "BBK_Expected_Ret.xls": "6b9df93912147d67e30561b4dbe89c58104f08e06b6fa1709c445343d2c3fd76",
+    "Table_6_7_Cross_Section.m": "7fd18f43a4442b85dd8dbb9183ce03eb28907fb6f80f01684ca470092736effd",
+    "Figure_3_Summary.m": "b298d3fe2212149cda65c3ab46d67aa9657f035ee8664e0ffae1c47df9eba2d6",
+    "Figure_1_2_Time_Series.m": "51fd632d4ee634044513b15eda6998a82a5881f9768803d24c12febadfe24a34",
+    "Portfolios_Cross_Section.xlsx": "d68b5e4f0a2b8e0f17509d0c07116c894bdf802c862a365980af1628a7a2bb9f",
+    "Data_US_1871_2022.xls": "cefdf848dafd0ae13c32eeba7d475d80980129ca8dcd18d790138fbe99ecc647",
+    "Data_UK_1813_1870.xls": "3e992cdb1bb3556e6bd972cadcb1a2bf96e7384b6394053c651cd85018b8f95d",
+    "Dividends_Earnings.xls": "27dbedbbe6d32fe5e81cb9feec93906bd59ba75e080bfbaca7d914476f59e72e",
+    "Table_8_Parameters.m": "053e67ab9aebdc0bd53a9c37b7510f84d687599ea4a57d4712b2c0c2d24b5185",
+    "Data_Summary.xlsx": "366a311af4d2590f650ae28ae15643e589dfdf57f66147f4901e14a4eaab0aa7",
+    "Table_9_Simulations.m": "11852a4e6043de59b6df0a9f4388bae32e8b8f7771a3845327c12bd453d97318",
+    "olsnw.m": "d77bf4e48b812ff94da5a21ae9b16655f46bb5896d8cef21051bf47548d15e7b",
+    "Table_4_Time_Series.m": "d418dc4d1d4ec45cecd42b8474858e8bd325b7d3f31ead5b8be185e3c392de79",
+    "Golez_Jackwerth_1996_2022.xls": "74bc4313994aae87e798b712e5a75833f94fcee7e0656d9fa6e6ff4a3aa571dd",
+    "README.pdf": "681d30f99099f0b85564b8257b74cd0991cfeaa07c7d5069287877e271a2790b",
+    "Table_3_Dividend_Strip.m": "e3fa8df30ec24a69f2254d5b194975d3ce86b2002b366cc3eb10bbaaa1482196"
+  }
+}

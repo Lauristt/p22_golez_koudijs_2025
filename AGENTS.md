@@ -4,6 +4,6 @@ Use the current contributor's own Git identity. For work performed for Lauris Li
 
 Keep source PDFs, exhibit screenshots, restricted raw data, credentials, and `.env` out of all Git history. Commit scripts, provenance, and original explanatory prose. `.env.example` may contain placeholders only.
 
-Run `uv run doit` for the project pipeline. These are setup tasks, not completed empirical replication. Never present original-paper screenshots or template examples as replicated results. Keep data ingestion, cleaning, analysis, and presentation separate as the project develops.
+Run `uv run doit` for the project pipeline. The default pipeline builds the assigned baseline exhibits; three Table 4 smoothing cells are unrecomputed source constants. New replication work currently stays local. Never present original-paper screenshots or template examples as replicated results. Keep data ingestion, cleaning, analysis, and presentation separate as the project develops.
 
 Future substantive work should use pull requests reviewed by a teammate. Preserve `.cruft.json` for template updates.
