@@ -258,3 +258,8 @@ src/z_scratch_pipeline_template.ipynb
 /data_manual/*
 !/data_manual/data_README.md
 .chartbook/
+
+# Personal study and instructor correspondence: local only
+/paper breakdown/
+/src/build_study_materials.py
+/src/test_study_materials.py

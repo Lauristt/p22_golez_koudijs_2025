@@ -2,7 +2,7 @@
 
 Replication and extension of Benjamin Golez and Peter Koudijs (2025), *Equity duration and predictability*, Journal of Financial Economics **172**, 104114. [Paper DOI](https://doi.org/10.1016/j.jfineco.2025.104114).
 
-**Status: initial setup.** The documentation pipeline runs, but the empirical replication, updated sample, validation exhibits, final LaTeX report and research product are not implemented yet. Original-paper screenshots are reference material, not replicated results. The course lists volume 171; the linked PDF identifies 172. See [version notes](https://github.com/Lauristt/p22_golez_koudijs_2025/blob/main/paper%20breakdown/README.md).
+**Status: initial setup.** The documentation pipeline runs, but the empirical replication, updated sample, validation exhibits, final LaTeX report and research product are not implemented yet.
 
 ## Team
 
@@ -19,15 +19,7 @@ uv sync --frozen
 uv run doit
 ```
 
-The default task runs the scaffold tests, creates the original-prose walkthrough PDF, and builds the ChartBook site in `docs/`. It does **not** execute the template's example analyses or claim replication results. The template example scripts/report files are retained only as development references.
-
-To download the instructor-linked paper and build the screenshot packet locally:
-
-```bash
-uv run doit reference_packet
-```
-
-Outputs: `output/pdf/paper_walkthrough.pdf`, `output/pdf/answer_question.pdf`, and eight PNG crops in `paper breakdown/screenshots/`. Read `paper breakdown/answer_question.md` for the email draft; nothing is emailed automatically. Downloads are checked against the recorded SHA-256. If the course replaces the PDF, review the new version before changing the hash or crop coordinates.
+The default task runs the scaffold tests and builds the ChartBook site in `docs/`. It does **not** execute the template's example analyses or claim replication results. The template example scripts/report files are retained only as development references.
 
 For pip users, `requirements.txt` is exported from `uv.lock`; use Python 3.12 and a virtual environment, install with `pip install -r requirements.txt`, then run `doit`. To update dependencies, update `pyproject.toml`, run `uv lock`, and regenerate requirements with `uv export --no-hashes --no-dev --format requirements-txt --output-file requirements.txt`.
 
@@ -44,13 +36,13 @@ For pip users, `requirements.txt` is exported from `uv.lock`; use Python 3.12 an
 | Table 7 | 10 | Portfolio predictive regressions |
 | Figure 3 | 11 | Combined ER/payout summary |
 
-Tables 8 and 9 are excluded. Confirm the version issues in the reply draft with the instructor before freezing the empirical specification.
+Tables 8 and 9 are excluded.
 
 ## Data and configuration
 
 [Authors' package, version 1](https://data.mendeley.com/datasets/fp6fryn7h3/1) is the first benchmark. Additional sources: Benjamin Golez's dividend-strip series; Golez-Koudijs (2018) historical series; CRSP and Compustat via WRDS; Davis-Fama-French book equity from Kenneth French. The course permits CRSP S&P 500 returns in place of Datastream. Actual package ingestion and WRDS pulls are pending; record source versions and licensing before redistribution.
 
-`src/settings.py` and optional ignored `.env` configure `DATA_DIR`, `OUTPUT_DIR`, `START_DATE`, `END_DATE`, and `WRDS_USERNAME`. See `.env.example`. The baseline ends in 2022; later update runs must report actual source coverage. Study PDFs intentionally use `output/pdf/`, and the reference paper uses `paper breakdown/source/`; these do not depend on analysis date settings. Never commit `.env`, secrets, raw restricted data or the source paper.
+`src/settings.py` and optional ignored `.env` configure `DATA_DIR`, `OUTPUT_DIR`, `START_DATE`, `END_DATE`, and `WRDS_USERNAME`. See `.env.example`. The baseline ends in 2022; later update runs must report actual source coverage. Never commit `.env`, secrets, raw restricted data or the source paper.
 
 ## Pipeline and next steps
 
@@ -67,7 +59,7 @@ Future work should go through teammate-reviewed pull requests. Every member must
 
 ## Extension
 
-**Not yet agreed with the instructor.** Candidate: a reproducible equity-duration research monitor comparing ER/EDG across windows and payout groups, with uncertainty, sensitivity controls and source coverage. The walkthrough contains a draft consultation pitch. Replace this section with the actual agreement after consultation; extending the endpoint alone is the update, not the extension.
+**Not yet agreed with the instructor.** Candidate: a reproducible equity-duration research monitor comparing ER/EDG across windows and payout groups, with uncertainty, sensitivity controls and source coverage. Replace this section with the actual agreement after consultation; extending the endpoint alone is the update, not the extension.
 
 ## Site and CI
 

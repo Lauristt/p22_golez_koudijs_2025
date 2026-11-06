@@ -6,31 +6,12 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-DOIT_CONFIG = {"backend": "sqlite3", "dep_file": ".doit-db.sqlite", "default_tasks": ["checks", "walkthrough", "site"]}
+DOIT_CONFIG = {"backend": "sqlite3", "dep_file": ".doit-db.sqlite", "default_tasks": ["checks", "site"]}
 
 
 def task_checks():
     """Run existing scaffold utility tests and source-integrity tests."""
     return {"actions": [[sys.executable, "-m", "pytest", "-q"]], "verbosity": 2}
-
-
-def task_walkthrough():
-    """Create original-prose study notes without downloading copyrighted material."""
-    return {
-        "actions": [[sys.executable, "src/build_study_materials.py", "walkthrough"]],
-        "file_dep": ["src/build_study_materials.py", "paper breakdown/walkthrough.json"],
-        "targets": ["output/pdf/paper_walkthrough.pdf"],
-    }
-
-
-def task_reference_packet():
-    """Verify/download the paper and create the local-only eight-exhibit attachment."""
-    return {
-        "actions": [[sys.executable, "src/build_study_materials.py", "packet"]],
-        "file_dep": ["src/build_study_materials.py", "paper breakdown/exhibits.json"],
-        "uptodate": [False],  # Recheck source integrity on each explicit request.
-        "targets": ["output/pdf/answer_question.pdf"],
-    }
 
 
 def build_site():
