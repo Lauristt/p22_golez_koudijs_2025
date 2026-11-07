@@ -102,6 +102,6 @@ Numerical tests compare translated OLS and HAC estimates against Statsmodels at 
 
 MATLAB/Octave was not available, so this is not a direct runtime-to-runtime comparison. Evidence consists of formula inspection, independent covariance checks, source identities and agreement with published table cells. Figures were visually inspected. Full comparisons, an original validation chart, diagnostics, source/code/output hashes and append-only JSONL build history are generated locally.
 
-## Local delivery boundary
+## Repository delivery boundary
 
-Only removal of personal study and instructor screenshot materials was pushed to `main` (commit `daea80e`). The Python work is on local branch `local/python-replication`; it has not been pushed. Raw inputs, outputs, personal notes and the dependency database remain ignored. Removal from the current cloud tree does not rewrite previous commits; the screenshot image files themselves were never tracked.
+Personal study and instructor screenshot materials were removed from the current `main` tree in commit `daea80e`. The Python baseline implementation is also included on `main`, as requested by Lauris Li. Raw inputs, outputs, personal notes and the dependency database remain ignored. Removal from the current cloud tree does not rewrite previous commits; the screenshot image files themselves were never tracked.
